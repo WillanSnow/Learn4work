@@ -53,6 +53,7 @@
 - `git branch`：查看分支，当前主分支有“*”标记
   - `git branch [BranchName]`：用于创建BranchName分支
   - `-d [BranchName]`：删除分支；`-D `：强制删除
+  - `-m [NewName]`：重命名分支；`- M`：强制重命名，如果分支名已存在则覆盖
 - `git checkout [BranchName]`：切换到BranchName分支
   - `-b [BranchName]`：创建并切换到BranchName分支
 - `git diff`：展示当前分支和主分支的区别
@@ -60,9 +61,10 @@
 - `git tag`：查看标签记录
   - `git tag [Tag]`：为当前位置添加标签Tag
 - `git clone [Url]`：克隆github仓库到本地
-  - 注意：clone将仓库克隆到当前目录下，仓库自动转化为git仓库，无须初始化
-- `git push [Remote] [Branch]`
-- `git pull [Remote] [Branch]`
+- `git push [Remote] [Branch]`：将Branch分支同步到远端仓库
+  - `-u`：将分支与远程仓库建立连接，设置默认`push pull`操作的对象
+- `git pull [Remote] [Branch]`：将远端仓库同步到Branch分支
+  - 一般远端仓库命名为`origin`
 - **向远程仓库提交代码的时候，一定要先进行pull操作，再进行push操作，避免出现冲突**
 
 ### SSH通信
@@ -81,9 +83,18 @@
 
 #### 通信(git与github交互)
 
-- clone：复制ssh链接，使用clone命令，在本地生成一个与github相同的git仓库，两个仓库自动建立连接；
-- 
-
+- 复制：复制ssh链接，使用clone命令，在本地生成一个与github相同的git仓库，两个仓库自动建立连接；
+  - 注意：在当前目录下执行clone命令，clone生成仓库是子目录，当前目录不会变成仓库
+- 同步：本地已有git，使用`push`命令，将本地仓库与github仓库同步
+- ```r
+  git remote add origin git@github.com:WillanSnow/Learn4work.git
+  # 添加新github仓库为远程仓库
+  git branch -M main
+  # 强制重命名分支为main
+  git push -u origin main
+  # 推送本地git到github，并建立连接
+  ```
+  *本地git提交到github新仓库*
 
 
 ### **git bash**快捷键
