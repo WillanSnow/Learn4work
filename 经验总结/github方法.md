@@ -1,6 +1,18 @@
-## Github使用
+## Github学习
 
-### **Explore模块**
+- [Github学习](#github学习)
+  - [Explore模块](#explore模块)
+    - [搜索技巧](#搜索技巧)
+  - [GitHub 术语](#github-术语)
+- [Git详解](#git详解)
+  - [git命令](#git命令)
+  - [SSH通信](#ssh通信)
+    - [生成SSH密钥并添加到github](#生成ssh密钥并添加到github)
+    - [通信(git与github交互)](#通信git与github交互)
+  - [**git bash**快捷键](#git-bash快捷键)
+  - [vscode管理](#vscode管理)
+
+### Explore模块
 
 - 用于搜索项目、仓库、开发者
   
@@ -86,7 +98,7 @@
 - 复制：复制ssh链接，使用clone命令，在本地生成一个与github相同的git仓库，两个仓库自动建立连接；
   - 注意：在当前目录下执行clone命令，clone生成仓库是子目录，当前目录不会变成仓库
 - 同步：本地已有git，使用`push`命令，将本地仓库与github仓库同步
-- ```r
+  ```r
   git remote add origin git@github.com:WillanSnow/Learn4work.git
   # 添加新github仓库为远程仓库
   git branch -M main
@@ -94,7 +106,15 @@
   git push -u origin main
   # 推送本地git到github，并建立连接
   ```
-  *本地git提交到github新仓库*
-
+  *本地git提交到github新仓库常用命令*
 
 ### **git bash**快捷键
+
+
+
+### vscode管理
+
+> vscode集成了git代码管理功能，使用十分方便。
+
+- `.gitignore`：根目录下文件，用于告知git不需要提交的文件(私有数据、本地配置等等)
+  - 内容：每行一个带根目录的相对目录
